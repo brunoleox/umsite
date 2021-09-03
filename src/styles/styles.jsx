@@ -7,19 +7,23 @@ export const themeLight = {
   hover: "#000",
   toggleBorder: "#fff",
   bgFlip1: "#2a9d8f",
-  bgFlip2: "#023047" ,
+  bgFlip2: "#023047",
   bgFlip3: "#9d0208",
+  bgSection2: "#98C8F0",
+  textTitleSection2: "#1b1b1e",
 };
 
 export const themeDark = {
   bg: "#363537",
   text: "#fff",
-  hover: "#2a9d8f",
+  hover: "#003566",
   selection: "${themelight.bg}",
   toggleBorder: "#6B8096",
   bgFlip1: "#495057",
-  bgFlip2: "#003566" ,
+  bgFlip2: "#003566",
   bgFlip3: "#540b0e",
+  bgSection2: "#495057",
+  textTitleSection2: "#fff",
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -52,7 +56,16 @@ export const GlobalStyles = createGlobalStyle`
       }
       #flip div:last-child div {
         background: ${({ theme }) => theme.bgFlip3};
-  }
+      }      
+    }
+    #section2 {
+      transition: all 0.50s linear;
+      background-color: ${({ theme }) => theme.bgSection2};
+      transition: all 0.50s linear;
+      color: ${({ theme }) => theme.textTitleSection2}; 
+    }
+
+    #title{ 
     }
   } 
 `;
@@ -130,9 +143,6 @@ export const Section1 = styled.div`
   align-items: center;
   justify-content: center;
 
-  br {
-    padding: 1px;
-  }
   span {
     font-family: Roboto, sans-serif;
     font-weight: 700;
@@ -149,28 +159,23 @@ export const Box = styled.div`
   font-size: 56px;
   font-weight: bold;
 
-  #criando {
-    
-  }
-
   #flip {
     height: 80px;
     overflow: hidden;
     margin: -25px;
-    
   }
 
-  #flip > div > div{
+  #flip > div > div {
     color: ${GlobalStyles.text};
     text-align: center;
     height: 85px;
     width: 100%;
     display: inline-block;
-    
+    padding: 0 20px;
   }
 
   #flip div:first-child {
-    animation: show 5s linear infinite;
+    animation: show 8s linear infinite;
   }
 
   #flip div div {
@@ -208,5 +213,50 @@ export const Box = styled.div`
     100% {
       margin-top: -270px;
     }
-  } 
+  }
+`;
+
+export const Section2 = styled.div`
+  align-items: flex-start;
+  background-color: ${GlobalStyles.bgSection2};
+  color: ${GlobalStyles.textTitleSection2};
+  display: flex;
+  height: 510px;
+  justify-content: center;
+  min-width: 1024px;
+  padding: 100px 200px;
+  width: 100%;
+
+  #title {
+    font-size: 80px;
+    line-height: 0.9em;
+    max-width: 170px;
+    text-align: left;
+  }
+
+  #servicos {
+    margin-top: 50px;
+    max-width: 1080px;
+    width: auto;
+
+    div {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+
+    span {
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      margin-left: 10px;
+      text-align: left;
+    }
+  }
 `;
