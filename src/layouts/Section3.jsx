@@ -1,4 +1,4 @@
-import { Box, Section3 } from "../styles/styles.jsx";
+import { Box, Section3 } from "./styles.jsx";
 export default function Section() {
   return (
     <Section3 id="section3">

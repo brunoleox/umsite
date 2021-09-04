@@ -9,7 +9,7 @@ import {
   Logo,
   Wrapper,
   Navbar,
-} from "../styles/styles.jsx";
+} from "./styles.jsx";
 
 export default function Header(props) {
   return (

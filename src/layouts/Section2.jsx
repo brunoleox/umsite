@@ -1,5 +1,5 @@
 import { RightCircleOutlined } from "@ant-design/icons";
-import { Box, Section2 } from "../styles/styles.jsx";
+import { Box, Section2 } from "./styles.jsx";
 export default function Section() {
   return (
     <Section2 id="section2">

@@ -5,7 +5,7 @@ import Section2 from "../layouts/Section2.jsx";
 import Section3 from "../layouts/Section3.jsx";
 import Section4 from "../layouts/Section4.jsx";
 import { ThemeProvider } from "styled-components";
-import { themeLight, themeDark, GlobalStyles } from "../styles/styles.jsx";
+import { themeLight, themeDark, GlobalStyles } from "../layouts/styles.jsx";
 
 export default function App() {
   const [theme, setTheme] = useState("light");

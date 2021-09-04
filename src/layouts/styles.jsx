@@ -1,5 +1,5 @@
+import "antd/dist/antd.css"
 import styled, { createGlobalStyle } from "styled-components";
-import "antd/dist/antd.css";
 
 export const themeLight = {
   bg: "#3d9be9",
@@ -38,10 +38,15 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text}; 
     font-family: Roboto, sans-serif;
     transition: all 0.50s linear;
+    a {
+      color: ${({ theme }) => theme.text}; 
+    }
     li a:hover {
+      color: ${({ theme }) => theme.text}; 
       color: ${({ theme }) => theme.hover};
     }
     li a:focus {
+      color: ${({ theme }) => theme.text}; 
       color: ${({ theme }) => theme.hover};
     }
   }
@@ -86,6 +91,8 @@ export const GlobalStyles = createGlobalStyle`
 
 export const Container = styled.div`
   background-color: ${GlobalStyles.bg};
+  color: ${GlobalStyles.text};
+  font-size: 17px;
   display: flex;
   justify-content: center;
   height: 100px;
@@ -93,10 +100,10 @@ export const Container = styled.div`
   width: 100%;
 `;
 export const Wrapper = styled.div`
+  min-width: 1024px;
   align-items: center;
   display: flex;
   justify-content: space-between;
-  min-width: 1024px;
 `;
 export const Logo = styled.div`
   margin-top: 30px;
