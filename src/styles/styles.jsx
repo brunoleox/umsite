@@ -1,5 +1,5 @@
-import "antd/dist/antd.css";
 import styled, { createGlobalStyle } from "styled-components";
+import "antd/dist/antd.css";
 
 export const themeLight = {
   bg: "#3d9be9",
@@ -10,6 +10,9 @@ export const themeLight = {
   bgFlip2: "#023047",
   bgFlip3: "#9d0208",
   bgSection2: "#98C8F0",
+  bgSection3: "#169288",
+  bgSection4: "#FFF",
+  textSection4: "#000",
   textTitleSection2: "#1b1b1e",
 };
 
@@ -23,6 +26,9 @@ export const themeDark = {
   bgFlip2: "#003566",
   bgFlip3: "#540b0e",
   bgSection2: "#495057",
+  bgSection3: "#354f52",
+  bgSection4: "#000",
+  textSection4: "#fff",
   textTitleSection2: "#fff",
 };
 
@@ -39,8 +45,7 @@ export const GlobalStyles = createGlobalStyle`
       color: ${({ theme }) => theme.hover};
     }
   }
-  body{
-    
+  body{    
     #section1 {
       transition: all 0.50s linear;
       background-color: ${({ theme }) => theme.bg};
@@ -64,8 +69,17 @@ export const GlobalStyles = createGlobalStyle`
       transition: all 0.50s linear;
       color: ${({ theme }) => theme.textTitleSection2}; 
     }
-
-    #title{ 
+    #section3 {
+      transition: all 0.50s linear;
+      background-color: ${({ theme }) => theme.bgSection3};
+      transition: all 0.50s linear;
+      color: ${({ theme }) => theme.text}; 
+    }
+    #section4 {
+      transition: all 0.50s linear;
+      background-color: ${({ theme }) => theme.bgSection4};
+      transition: all 0.50s linear;
+      color: ${({ theme }) => theme.textSection4}; 
     }
   } 
 `;
@@ -90,11 +104,10 @@ export const Logo = styled.div`
   height: 90px;
 `;
 
-export const Navbar = styled.ul`
+export const Navbar = styled.div`
+  color: ${GlobalStyles.text};
   display: flex;
   flex-direction: row;
-  color: ${GlobalStyles.text};
-
   li {
     list-style: none;
     margin-left: 10px;
@@ -109,7 +122,6 @@ export const Navbar = styled.ul`
   li::selection {
     color: ${GlobalStyles.selection};
   }
-
   .ant-switch {
     background-color: ${themeDark.bg};
     border: solid 0.01px;
@@ -259,4 +271,74 @@ export const Section2 = styled.div`
       text-align: left;
     }
   }
+`;
+export const Section3 = styled.div`
+  align-items: flex-start;
+  background-color: ${GlobalStyles.bgSection3};
+  color: ${GlobalStyles.textTitleSection2};
+  display: flex;
+  flex-direction: column;
+  height: 510px;
+  justify-content: center;
+  min-width: 1024px;
+  padding: 100px 400px;
+  width: 100%;
+
+  #title {
+    font-size: 80px;
+    font-weight: bold;
+    line-height: 0.9em;
+    max-width: 170px;
+    text-align: left;
+  }
+
+  #subtitle {
+    margin-top: 50px;
+    font-size: 1.3rem;
+    text-align: justify;
+    max-width: 980px;
+  }
+`;
+export const Section4 = styled.div`
+  align-items: flex-start;
+  background-color: ${GlobalStyles.bgSection4};
+  color: ${GlobalStyles.textTitleSection2};
+  display: flex;
+  flex-direction: column;
+  height: 510px;
+  min-width: 1024px;
+  padding: 100px 400px;
+  width: 100%;
+
+  #title {
+    font-size: 80px;
+    font-weight: bold;
+    line-height: 0.9em;
+    max-width: 170px;
+    text-align: left;
+  }
+
+  #subtitle {
+    margin-top: 50px;
+    font-size: 1.3rem;
+    text-align: justify;
+    max-width: 980px;
+  }
+
+  #grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
+    height: 1100px;
+    max-width: 980px;
+    margin-top: 20px;
+    grid-template-areas:
+      "predrisa cianport"
+      "gpsantos imperial"
+      "inversol agn";
+    width: 100%;
+  }
+
+
 `;
